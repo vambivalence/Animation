@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+.scene {
+    background-color: rgb(245, 245, 245);
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mountain {
+    width: 0;
+    height: 0;
+    border-left: 190px solid transparent;
+    border-right: 190px solid transparent;
+    border-bottom: 160px solid #3276ae;
+    left: 210px;
+    bottom: 0;
+}
+
+.mountain::before {
+    left: -85px;
+    bottom: -160px;
+    border-left: 220px solid transparent;
+    border-right: 220px solid transparent;
+    border-bottom: 220px solid #3276ae;
+}
+
+.mountain::after {
+    right: -40px;
+    bottom: -160px;
+    border-left: 180px solid transparent;
+    border-right: 220px solid transparent;
+    border-bottom: 220px solid #3276ae;
+}
+
+
+.sun {
+    width: 130px;
+	height: 130px;
+	background-color: rgb(221, 189, 9);
+	border-radius: 50%;
+    top: 300px;
+    left: 390px;
+    
+    animation-name: color;
+    animation-duration: 9s;
+    transition-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.clouds, .clouds::before, .clouds::after, .clouds-small, .clouds-small::after, .clouds-small::before, .clouds_1, .clouds_1::before, .clouds_1::after, .clouds-small_1, .clouds-small_1::after, .clouds-small_1::before {
+    background-color: rgb(226, 225, 225);
+}
+
+.clouds, .clouds::before, .clouds::after, .clouds-small, .clouds-small::after, .clouds-small::before, .clouds_1, .clouds_1::before, .clouds_1::after, .clouds-small_1, .clouds-small_1::after, .clouds-small_1::before,.mountain, .mountain::before, .mountain::after, .sun {
+    position: absolute; 
+    content: "";
+}
+
+.clouds, .clouds-small, .clouds_1, .clouds-small_1 {
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.clouds {
+    width: 160px;
+    height: 50px;
+    border-radius: 40px;
+    top: 240px;
+    animation-name: clouds;
+    animation-duration: 7s;
+    transition-timing-function: ease;
+}
+
+.clouds::before {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    top: -40px;
+    left: 20px;
+}
+
+.clouds::after {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: -27px;
+    right: 23px;
+}
+
+.clouds-small {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    top: 240px;
+    animation-name: clouds;
+    animation-duration: 6s;
+    transition-timing-function: ease-in;
+}
+
+.clouds-small::after {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    top: -35px;
+    left: 20px;
+}
+
+.clouds-small::before {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    top: -22px;
+    right: 17px;
+}
+
+.clouds_1 {
+    width: 160px;
+    height: 50px;
+    border-radius: 40px;
+    top: 240px;
+    animation-name: clouds;
+    animation-duration: 9s;
+    transition-timing-function: linear;
+}
+
+.clouds_1::before {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    top: -40px;
+    left: 20px;
+}
+
+.clouds_1::after {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    top: -30px;
+    right: 25px;
+}
+
+.clouds-small_1 {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    top: 240px;
+    animation-name: clouds;
+    animation-duration: 12s;
+    transition-timing-function: ease-in-out;
+}
+
+.clouds-small_1::after {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    top: -35px;
+    left: 20px;
+}
+
+.clouds-small_1::before {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    top: -25px;
+    right: 20px;
+}
+
+@keyframes color {
+    0% {top: 270px; background-color: transparent;}
+    5% {top: 270px; background-color: transparent;}
+    10% {background-color: rgb(223, 114, 12);}
+    25% {background-color: rgb(221, 189, 9);}
+    70% {background-color: rgb(255, 226, 64);}
+    100% {top: -150px; background-color: rgb(221, 189, 9);}
+}
+
+
+@keyframes clouds {
+    0% {left: -150px; background-color: transparent;}
+    15% {left: -75px; background-color: rgb(226, 225, 225);}
+    100% {left: 700px; background-color: rgb(226, 225, 225);}
+}
+
